@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تأكيد الطلب</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="order-confirmation.css">
+</head>
+<body>
+    <div class="container">
+        <div class="confirmation-page">
+            <div class="progress-bar">
+                <div class="step completed">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>السلة</span>
+                </div>
+                <div class="step active">
+                    <i class="fas fa-clipboard-check"></i>
+                    <span>تأكيد الطلب</span>
+                </div>
+                <div class="step">
+                    <i class="fas fa-check-circle"></i>
+                    <span>تم الطلب</span>
+                </div>
+            </div>
+
+            <div class="confirmation-content">
+                <div class="order-summary">
+                    <h2><i class="fas fa-receipt"></i> ملخص الطلب</h2>
+                    <div class="summary-details">
+                        <p>رقم الطلب: <strong id="orderId"></strong></p>
+                        <p>التاريخ: <strong id="orderDate"></strong></p>
+                        <div id="itemsList" class="items-list"></div>
+                        <div class="total-section">
+                            <div class="summary-row">
+                                <span>إجمالي المنتجات:</span>
+                                <span id="subtotal">0.00 جنيه</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>الضريبة (14%):</span>
+                                <span id="tax">0.00 جنيه</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>الإجمالي النهائي:</span>
+                                <span id="total">0.00 جنيه</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-section">
+                    <h2><i class="fas fa-credit-card"></i> طريقة الدفع</h2>
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <input type="radio" id="cashOnDelivery" name="payment" checked>
+                            <label for="cashOnDelivery">
+                                <i class="fas fa-money-bill-wave"></i>
+                                الدفع عند الاستلام
+                            </label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" id="creditCard" name="payment">
+                            <label for="creditCard">
+                                <i class="fas fa-credit-card"></i>
+                                بطاقة ائتمانية
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="cardDetails" class="card-details" style="display:none">
+                        <div class="form-group">
+                            <label>رقم البطاقة</label>
+                            <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>تاريخ الانتهاء</label>
+                                <input type="text" id="cardExpiry" placeholder="MM/YY">
+                            </div>
+                            <div class="form-group">
+                                <label>رمز الأمان</label>
+                                <input type="text" id="cardCvc" placeholder="CVC">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="cart.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-right"></i>
+                        العودة للسلة
+                    </a>
+                    <button id="confirmOrderBtn" class="btn btn-primary">
+                        <i class="fas fa-check"></i>
+                        تأكيد الطلب
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="order-confirmation.js"></script>
+</body>
+</html>

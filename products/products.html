@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجرنا - المنتجات</title>
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="filter-wrapper">
+                <button class="filter-toggle" id="filterToggle">
+                    <i class="fas fa-filter"></i>
+                    <span>الفئات</span>
+                </button>
+                <div class="filter-menu" id="filterMenu">
+                    <div class="filter-option active" data-value="">
+                        <i class="fas fa-layer-group"></i>
+                        جميع الفئات
+                    </div>
+                    <div class="filter-option" data-value="electronics">
+                        <i class="fas fa-laptop"></i>
+                        إلكترونيات
+                    </div>
+                    <div class="filter-option" data-value="jewelery">
+                        <i class="fas fa-gem"></i>
+                        اكسسوارات
+                    </div>
+                    <div class="filter-option" data-value="women's clothing">
+                        <i class="fas fa-female"></i>
+                        ملابس نسائي
+                    </div>
+                    <div class="filter-option" data-value="men's clothing">
+                        <i class="fas fa-male"></i>
+                        ملابس رجالى
+                    </div>
+                </div>
+            </div>            <nav class="main-nav">
+                <a href="javascript:void(0)" onclick="document.getElementById('welcome-section').scrollIntoView({behavior: 'smooth'})" class="home-link">الرئيسية</a>
+                <a href="#products-section">التشكيلات</a>
+                <a href="#new-products-section" class="new-products-link">جديد</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <button class="icon-button" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+            <button class="icon-button">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="icon-button" id="cartButton">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-popup">
+            <div class="search-header">
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="ابحث عن منتجات...">
+                </div>
+                <button class="close-search" id="closeSearch">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results" id="searchResults">
+            </div>
+        </div>
+    </div>
+
+    <nav class="side-nav" id="sideNav">
+        <div class="side-nav-header">
+            <h3>القائمة</h3>
+            <button class="close-nav" id="closeNav">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="بحث...">
+        </div>
+        
+    </nav>
+
+    <main>        <div id="welcome-section" class="welcome-section">
+            <div class="welcome-content">
+                <h2>مرحباً بك في متجرنا الإلكتروني</h2>
+                <p class="intro-text">
+                    اكتشف تشكيلة متنوعة من المنتجات العصرية عالية الجودة. نقدم لك أفضل الماركات العالمية والمحلية بأسعار تنافسية.
+                </p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-truck"></i>
+                        <span>توصيل سريع</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>تسوق آمن</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-headset"></i>
+                        <span>دعم 24/7</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-undo"></i>
+                        <span>استرجاع مجاني</span>
+                    </div>
+                </div>
+                
+                <div class="product-slideshow">
+                    <div class="slideshow-container">
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="منتج 1">
+                            <div class="slide-overlay">
+                                <h3 class="slide-title">إلكترونيات حديثة</h3>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b" alt="منتج 2">
+                            <div class="slide-overlay">
+                                <h3 class="slide-title">أزياء عصرية</h3>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="منتج 3">
+                            <div class="slide-overlay">
+                                <h3 class="slide-title">أحذية رياضية</h3>
+                            </div>
+                        </div>                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338" alt="منتج 4">
+                            <div class="slide-overlay">
+                                <h3 class="slide-title">اكسسوارات مميزة</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="welcome-cta">
+                    <a href="#products-section" class="shop-now-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        تسوق الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <section id="products-section" class="products-section">
+            <div class="section-title">
+                <h2>تشكيلات مميزة</h2>
+                <p>اكتشف أحدث المنتجات في تشكيلتنا</p>
+            </div>
+
+            <div class="loading-indicator" id="loadingIndicator" style="display:none">
+                <div class="spinner"></div>
+                <p>جاري تحميل المنتجات...</p>
+            </div>
+
+            <div class="products-grid" id="productsContainer">
+            </div>
+        </section>
+
+        <section id="new-products-section" class="products-section" style="display: none">
+            <div class="section-title">
+                <h2>أحدث المنتجات</h2>
+                <p>آخر الإضافات إلى تشكيلتنا</p>
+            </div>
+            <div class="products-grid" id="newProductsContainer">
+            </div>
+        </section>
+
+        <div id="productFormModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2 id="modalTitle">إضافة منتج جديد</h2>
+                <form id="productForm">
+                    <input type="hidden" id="productId">
+                    <div class="form-group">
+                        <label for="productName">اسم المنتج</label>
+                        <input type="text" id="productName" placeholder="اسم المنتج" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice">السعر</label>
+                        <input type="number" id="productPrice" placeholder="السعر" min="0" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productQuantity">الكمية المتاحة</label>
+                        <input type="number" id="productQuantity" placeholder="الكمية" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productDesc">الوصف</label>
+                        <textarea id="productDesc" placeholder="الوصف" rows="3"></textarea>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="productImage">صورة المنتج</label>
+                        <input type="file" id="productImage" accept="image/*">
+                        <div id="imagePreview" class="image-preview"></div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">حفظ</button>
+                        <button type="button" class="btn-cancel" id="cancelBtn">إلغاء</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="productDetailsModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2 id="detailsProductName"></h2>
+                <div class="product-details-content">
+                    <div class="product-image-container">
+                        <img id="detailsProductImage" src="" alt="صورة المنتج">
+                    </div>
+                    <div class="product-info">
+                        <p><strong>السعر:</strong> <span id="detailsProductPrice"></span> جنيه</p>
+                        <p><strong>الكمية المتاحة:</strong> <span id="detailsProductQuantity"></span></p>
+                        <p><strong>الفئة:</strong> <span id="detailsProductCategory"></span></p>
+                        <p><strong>الوصف:</strong> <span id="detailsProductDesc"></span></p>
+                    </div>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-primary" id="addToCartFromDetails">أضف إلى العربة</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>متجرنا</h3>
+                <p>نحن نقدم أفضل المنتجات بجودة عالية وأسعار منافسة لإرضاء عملائنا الكرام.</p>
+                <div class="contact">
+                    <p><i class="fas fa-phone"></i> 01234567890</p>
+                    <p><i class="fas fa-envelope"></i> info@store.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> القاهرة، مصر</p>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul class="quick-links">
+                    <li><a href="#products-section"><i class="fas fa-angle-left"></i> منتجاتنا</a></li>
+                    <li><a href="#new-products-section"><i class="fas fa-angle-left"></i> الجديد</a></li>
+                    <li><a href="#" class="contact-link"><i class="fas fa-angle-left"></i> اتصل بنا</a></li>
+                    <li><a href="#" class="about-link"><i class="fas fa-angle-left"></i> من نحن</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>تابعنا</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h4>النشرة البريدية</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="البريد الإلكتروني">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة &copy; 2024 متجرنا</p>
+            </div>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عربة التسوق</title>
+    <link rel="stylesheet" href="cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <main class="container">
+        <div class="cart-container">
+            <div class="cart-items" id="cartItems">
+            </div>
+            
+            <div class="cart-summary">
+                <h2 class="summary-title">ملخص الطلب</h2>
+                <div class="summary-item">
+                    <span>إجمالي المنتجات</span>
+                    <span id="subtotal">0.00 جنيه</span>
+                </div>
+                <div class="summary-item">
+                    <span>الضريبة (14%)</span>
+                    <span id="tax">0.00 جنيه</span>
+                </div>
+                <div class="summary-item total">
+                    <span>الإجمالي النهائي</span>
+                    <span id="totalAmount">0.00 جنيه</span>
+                </div>
+                
+                <div class="coupon-section">
+                    <input type="text" id="couponCode" placeholder="أدخل كود الخصم" class="coupon-input">
+                    <button id="applyCoupon" class="coupon-btn">تطبيق</button>
+                </div>
+                <div class="summary-item discount" id="discountRow" style="display:none">
+                    <span>الخصم</span>
+                    <span id="discount">0.00 جنيه</span>
+                </div>
+                
+                <button id="checkoutBtn" class="checkout-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    إتمام الشراء
+                </button>
+                
+                <div class="payment-options" id="paymentOptions" style="display:none">
+                </div>
+            </div>
+        </div>
+        
+        <div class="empty-cart" id="emptyCartMsg" style="display:none">
+            <i class="fas fa-shopping-cart"></i>
+            <h2>عربة التسوق فارغة</h2>
+            <p>لم تقم بإضافة أي منتجات بعد</p>
+            <a href="../products/products.html" class="checkout-btn">تصفح المنتجات</a>
+        </div>
+    </main>
+    <script type="module" src="cart.js"></script>
+</body>
+</html>

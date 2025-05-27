@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تسجيل دخول المسؤول</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>تسجيل دخول</h1>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+            <input type="password" id="password" placeholder="كلمة المرور" required>
+            <button type="submit">دخول</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (email === 'admin@example.com' && password === '123456') {
+                localStorage.setItem('isLoggedIn', 'true'); 
+                window.location.href = 'index.html'; 
+            } else {
+                alert('بيانات الدخول غير صحيحة!');
+            }
+        });
+    </script>
+</body>
+</html>

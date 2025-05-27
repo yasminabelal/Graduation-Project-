@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الطلب</title>
+    <link rel="stylesheet" href="orders.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="order-details-page">
+            <div class="navigation-buttons">
+                <a href="orders.html" class="btn btn-primary">
+                    <i class="fas fa-arrow-right"></i>
+                    العودة للطلبات
+                </a>
+                <a href="../products/products.html" class="btn btn-success">
+                    <i class="fas fa-shopping-cart"></i>
+                    تكملة التسوق
+                </a>
+                <button id="logoutBtn" class="btn btn-danger">
+                    <i class="fas fa-sign-out-alt"></i>
+                    تسجيل الخروج
+                </button>
+            </div>
+
+            <div class="order-info">
+                <h2>معلومات الطلب</h2>
+                <p>رقم الطلب: <span id="orderId"></span></p>
+                <p>التاريخ: <span id="orderDate"></span></p>
+                <p>الحالة: <span id="orderStatus"></span></p>
+            </div>
+
+            <div class="order-items">
+                <h2>المنتجات</h2>
+                <div id="itemsList"></div>
+            </div>
+
+            <div class="order-summary">
+                <h2>ملخص الطلب</h2>
+                <p>إجمالي المنتجات: <span id="subtotal"></span></p>
+                <p>الضريبة: <span id="tax"></span></p>
+                <p class="total">الإجمالي النهائي: <span id="total"></span></p>
+            </div>
+        </div>
+    </div>
+    <script src="order-details.js"></script>
+</body>
+</html>

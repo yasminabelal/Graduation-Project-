@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - المسؤول</title>
+    <link rel="stylesheet" href="./admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="admin-header">
+        <h1>لوحة تحكم المسؤول</h1>
+        <div class="user-info">
+            <span id="adminName"></span>
+            <button id="logoutBtn" class="btn-logout">تسجيل الخروج</button>
+        </div>
+    </div>
+    
+    <nav class="admin-nav">
+        <ul>
+            <li><a href="#dashboard" class="active">الإحصائيات</a></li>
+            <li><a href="#products">إدارة المنتجات</a></li>
+            <li><a href="#orders">إدارة الطلبات</a></li>
+            <li><a href="#users">إدارة المستخدمين</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="dashboard" class="content-section active">
+            <h2>إحصائيات النظام</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>عدد المنتجات</h3>
+                    <p id="productsCount">0</p>
+                </div>
+                <div class="metric-card">
+                    <h3>عدد الطلبات</h3>
+                    <p id="ordersCount">0</p>
+                </div>
+                <div class="metric-card">
+                    <h3>إجمالي المبيعات</h3>
+                    <p id="totalSales">0 جنيه</p>
+                </div>
+                <div class="metric-card">
+                    <h3>المستخدمين النشطين</h3>
+                    <p id="activeUsers">0</p>
+                </div>
+            </div>
+            
+            <div class="recent-orders">
+                <h3>أحدث الطلبات</h3>
+                <table id="recentOrdersTable">
+                    <thead>
+                        <tr>
+                            <th>رقم الطلب</th>
+                            <th>العميل</th>
+                            <th>التاريخ</th>
+                            <th>المبلغ</th>
+                            <th>الحالة</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="products" class="content-section">
+            <div class="section-header">
+                <h2>إدارة المنتجات</h2>
+                <button id="addProductBtn" class="btn-primary">إضافة منتج جديد</button>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" id="productSearch" placeholder="ابحث عن منتج...">
+                <button id="searchProductBtn">بحث</button>
+            </div>
+            
+            <table id="productsTable">
+                <thead>
+                    <tr>
+                        <th>الصورة</th>
+                        <th>الاسم</th>
+                        <th>السعر</th>
+                        <th>الفئة</th>
+                        <th>الكمية</th>
+                        <th>الإجراءات</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            
+            <div id="productModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h3 id="modalTitle">إضافة منتج جديد</h3>
+                    <form id="productForm">
+                        <input type="hidden" id="productId">
+                        <div class="form-group">
+                            <label for="productName">اسم المنتج</label>
+                            <input type="text" id="productName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productPrice">السعر</label>
+                            <input type="number" id="productPrice" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productCategory">الفئة</label>
+                            <select id="productCategory" required>
+                                <option value="electronics">إلكترونيات</option>
+                                <option value="clothing">ملابس</option>
+                                <option value="books">كتب</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="productQuantity">الكمية المتاحة</label>
+                            <input type="number" id="productQuantity" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productDescription">الوصف</label>
+                            <textarea id="productDescription" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="productImage">صورة المنتج</label>
+                            <input type="file" id="productImage">
+                        </div>
+                        <button type="submit" class="btn-primary">حفظ</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="orders" class="content-section">
+            <h2>إدارة الطلبات</h2>
+            
+            <div class="order-filters">
+                <select id="orderStatusFilter">
+                    <option value="all">جميع الطلبات</option>
+                    <option value="pending">قيد الانتظار</option>
+                    <option value="processing">قيد المعالجة</option>
+                    <option value="shipped">تم الشحن</option>
+                    <option value="delivered">تم التسليم</option>
+                </select>
+            </div>
+            
+            <table id="ordersTable">
+                <thead>
+                    <tr>
+                        <th>رقم الطلب</th>
+                        <th>العميل</th>
+                        <th>التاريخ</th>
+                        <th>المبلغ</th>
+                        <th>الحالة</th>
+                        <th>الإجراءات</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            
+            <div id="orderDetailsModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h3>تفاصيل الطلب <span id="orderNumber"></span></h3>
+                    <div class="order-info">
+                        <div>
+                            <h4>معلومات العميل</h4>
+                            <p id="customerName"></p>
+                            <p id="customerEmail"></p>
+                        </div>
+                        <div>
+                            <h4>معلومات الشحن</h4>
+                            <p id="shippingAddress"></p>
+                        </div>
+                    </div>
+                    
+                    <table id="orderItemsTable">
+                        <thead>
+                            <tr>
+                                <th>المنتج</th>
+                                <th>السعر</th>
+                                <th>الكمية</th>
+                                <th>الإجمالي</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    
+                    <div class="order-total">
+                        <p>المجموع: <span id="orderTotal"></span></p>
+                    </div>
+                    
+                    <div class="order-actions">
+                        <select id="updateOrderStatus">
+                            <option value="pending">قيد الانتظار</option>
+                            <option value="processing">قيد المعالجة</option>
+                            <option value="shipped">تم الشحن</option>
+                            <option value="delivered">تم التسليم</option>
+                        </select>
+                        <button id="saveOrderStatus" class="btn-primary">حفظ التغييرات</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="users" class="content-section">
+            <h2>إدارة المستخدمين</h2>
+            
+            <table id="usersTable">
+                <thead>
+                    <tr>
+                        <th>اسم المستخدم</th>
+                        <th>البريد الإلكتروني</th>
+                        <th>تاريخ التسجيل</th>
+                        <th>الدور</th>
+                        <th>الإجراءات</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="../utils/format.js" type="module"></script>
+    <script src="./admin.js" type="module"></script>
+</body>
+</html>

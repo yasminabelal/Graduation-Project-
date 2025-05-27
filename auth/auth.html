@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام المصادقة</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="container" id="loginContainer">
+        <div class="form-container">
+            <h2>تسجيل الدخول</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">البريد الإلكتروني</label>
+                    <input type="email" id="loginEmail" required>
+                    <span class="error-message" id="loginEmailError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">كلمة المرور</label>
+                    <input type="password" id="loginPassword" required>
+                    <span class="error-message" id="loginPasswordError"></span>
+                </div>
+                <button type="submit" class="btn">تسجيل الدخول</button>
+                <p class="toggle-form">ليس لديك حساب؟ <a href="#" id="showRegister">انشئ حساب جديد</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="container" id="registerContainer" style="display:none">
+        <div class="form-container">
+            <h2>تسجيل جديد</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerUsername">اسم المستخدم</label>
+                    <input type="text" id="registerUsername" required>
+                    <span class="error-message" id="registerUsernameError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">البريد الإلكتروني</label>
+                    <input type="email" id="registerEmail" required>
+                    <span class="error-message" id="registerEmailError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">كلمة المرور</label>
+                    <input type="password" id="registerPassword" required>
+                    <span class="error-message" id="registerPasswordError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">تأكيد كلمة المرور</label>
+                    <input type="password" id="registerConfirmPassword" required>
+                    <span class="error-message" id="registerConfirmPasswordError"></span>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="registerIsAdmin">
+                    <label for="registerIsAdmin">تسجيل كمسؤول</label>
+                </div>
+                <button type="submit" class="btn">إنشاء حساب</button>
+                <p class="toggle-form">لديك حساب بالفعل؟ <a href="#" id="showLogin">تسجيل الدخول</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="auth.js" type="module"></script>
+</body>
+</html>
