@@ -1,4 +1,4 @@
-import storage from '../storage.js';
+import storage from './storage.js';
 
 const categories = {
     'electronics': 'إلكترونيات',
@@ -236,7 +236,7 @@ function checkAuth() {
     const currentUser = storage.get('currentUser');
     if (!currentUser) {
         storage.set('redirectAfterAuth', window.location.pathname);
-        window.location.href = '../auth/auth.html';
+        window.location.href = '/auth/auth.html';
         return false;
     }
     
@@ -266,12 +266,12 @@ function navigateToCart(event) {
     }
     
     if (currentUser) {
-        window.location.href = '../cart/cart.html';
+        window.location.href = '/cart/cart.html';
         return;
     }
     
-    storage.set('redirectAfterAuth', '../cart/cart.html');
-    window.location.href = '../auth/auth.html';
+    storage.set('redirectAfterAuth', '/cart/cart.html');
+    window.location.href = '/auth/auth.html';
 }
 
 function setupEventListeners() {
@@ -309,12 +309,12 @@ function setupEventListeners() {
     
     elements.logoutBtn.addEventListener('click', logout);
     
-    document.querySelector('a[href="../cart/cart.html"]')?.addEventListener('click', (e) => {
+    document.querySelector('a[href="/cart/cart.html"]')?.addEventListener('click', (e) => {
         const currentUser = storage.get('currentUser');
         if (!currentUser) {
             e.preventDefault();
             storage.set('redirectAfterAuth', '../cart/cart.html');
-            window.location.href = '../auth/auth.html';
+            window.location.href = '/auth/auth.html';
         }
     });
     
