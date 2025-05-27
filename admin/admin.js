@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     document.getElementById('logoutBtn').addEventListener('click', () => {
         storage.remove('currentUser');
-        window.location.href = '../products/index.html';
+        window.location.href = '../index.html';
     });
 
     const navLinks = document.querySelectorAll('.admin-nav a');

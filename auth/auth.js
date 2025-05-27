@@ -131,7 +131,7 @@ async function login(email, password) {
             if (redirectPath) {
                 storage.remove('redirectAfterAuth');
                 window.location.href = redirectPath;
-            } else {                window.location.href = '../products/index.html';
+            } else {                window.location.href = '../index.html';
             }
         }
         return true;
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const showLogin = document.getElementById('showLogin');
       const currentUser = getCurrentUser();
     if (currentUser) {
-        window.location.href = currentUser.isAdmin ? '../admin/admin.html' : '../products/index.html';
+        window.location.href = currentUser.isAdmin ? '../admin/admin.html' : '../index.html';
         return;
     }
     
