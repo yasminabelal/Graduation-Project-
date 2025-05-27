@@ -236,7 +236,7 @@ function checkAuth() {
     const currentUser = storage.get('currentUser');
     if (!currentUser) {
         storage.set('redirectAfterAuth', window.location.pathname);
-        window.location.href = '/auth/auth.html';
+        window.location.href = './auth/auth.html';
         return false;
     }
     
