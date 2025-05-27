@@ -3,8 +3,7 @@ import storage from '../storage.js';
 document.addEventListener('DOMContentLoaded', () => {
     const currentUser = storage.get('currentUser');
     
-    if (!currentUser || !currentUser.isAdmin) {
-        window.location.href = '../auth/auth.html';
+    if (!currentUser || !currentUser.isAdmin) {        window.location.href = '../auth/auth.html';
         return;
     }
 
@@ -12,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     document.getElementById('logoutBtn').addEventListener('click', () => {
         storage.remove('currentUser');
-        window.location.href = '../auth/auth.html';
+        window.location.href = '../products/index.html';
     });
 
     const navLinks = document.querySelectorAll('.admin-nav a');

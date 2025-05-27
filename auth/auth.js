@@ -131,8 +131,7 @@ async function login(email, password) {
             if (redirectPath) {
                 storage.remove('redirectAfterAuth');
                 window.location.href = redirectPath;
-            } else {
-                window.location.href = '../products/products.html';
+            } else {                window.location.href = '../products/index.html';
             }
         }
         return true;
@@ -222,10 +221,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const registerContainer = document.getElementById('registerContainer');
     const showRegister = document.getElementById('showRegister');
     const showLogin = document.getElementById('showLogin');
-    
-    const currentUser = getCurrentUser();
+      const currentUser = getCurrentUser();
     if (currentUser) {
-        window.location.href = currentUser.isAdmin ? '../admin/admin.html' : '../products/products.html';
+        window.location.href = currentUser.isAdmin ? '../admin/admin.html' : '../products/index.html';
         return;
     }
     
