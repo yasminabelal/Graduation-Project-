@@ -35,4 +35,7 @@ A platform for selling clothing, electronics, and accessories. Developed using:
 -Appointed as an official![Appointed as an official](https://github.com/user-attachments/assets/96695b9f-2e40-41e7-b735-2cbdf0c6cc92)
 -View order details for admin ![View order details](https://github.com/user-attachments/assets/55895dd6-84d9-4364-97ab-987c31e3c186)
 
+-A short video explaining the project and what it contains
+https://drive.google.com/file/d/1045ma8EmkMLPpfA3w2KxcjqHpXZWhuMp/view?usp=drivesdk
+
 
